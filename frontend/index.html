@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Knowledge Base</title>
+</head>
+<body>
+
+    <h1>RAG Knowledge Base</h1>
+
+    <p>Welcome to your AI-powered knowledge base.</p>
+
+    <button onclick="checkBackend()">
+        Check Backend
+    </button>
+
+    <p id="result"></p>
+
+    <script>
+        async function checkBackend() {
+
+            const result = document.getElementById("result");
+
+            try {
+                const response = await fetch(
+                    "http://127.0.0.1:8000/"
+                );
+
+                const data = await response.json();
+
+                result.innerText = data.message;
+
+            } catch (error) {
+                result.innerText = "Backend connection failed";
+            }
+        }
+    </script>
+
+</body>
+</html>

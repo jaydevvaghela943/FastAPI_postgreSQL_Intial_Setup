@@ -1,0 +1,14 @@
+
+fastapi
+uvicorn[standard]
+sqlalchemy[asyncio]
+asyncpg
+pydantic
+pydantic-settings
+python-dotenv
+qdrant-client
+google-genai
+python-multipart
+email-validator
+PyJWT
+pwdlib[argon2]
